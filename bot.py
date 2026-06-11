@@ -18,7 +18,7 @@ BASE_URL      = "https://api.bitget.com"
 SYMBOL        = "BTCUSDT"
 TRADE_USDT    = 20
 TRAIL_PCT     = 0.015
-CHECK_EVERY   = 900
+CHECK_EVERY   = 300
 
 # ═══════════════════════════════════════════════════════════════
 #  FIRMA API
@@ -257,7 +257,7 @@ def run_bot():
     while True:
         try:
             cycle += 1
-            opens, highs, lows, closes, volumes = get_candles(granularity="15min")
+            opens, highs, lows, closes, volumes = get_candles(granularity="5min")
             price = get_price()
 
             rsi                    = calc_rsi(closes)
