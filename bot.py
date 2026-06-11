@@ -48,7 +48,7 @@ def get_price():
         raise Exception("Risposta vuota da tickers")
     return float(data["data"][0]["lastPr"])
 
-def get_candles(granularity="15min", limit=200):
+def get_candles(granularity="5min", limit=200):
     url = f"{BASE_URL}/api/v2/spot/market/candles?symbol={SYMBOL}&granularity={granularity}&limit={limit}"
     r = requests.get(url, timeout=10)
     data = r.json()
